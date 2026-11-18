@@ -1,0 +1,39 @@
+seed: 10
+dtype: float64
+
+problem:
+  n: 60
+  epsilon: 0.1
+  method: std       # std or supg
+  BC_approach: soft     # soft, H, or I
+  alpha: null
+  beta: null
+
+evaluation:
+  n_ref: 20000
+
+model:
+  weight_init: true
+  bias_init: true
+
+loss:
+  backprop: manual  # manual or auto
+
+training:
+  optimizer: Adam   # Adam or GD
+  learning_rate: 0.01
+  iterations: 10000
+
+lbfgs:
+  iterations: 800
+  learning_rate: 1.0
+  max_iter: 20
+  history_size: 100
+  tolerance_grad: 1.0e-7
+  tolerance_change: 1.0e-9
+
+output:
+  results_dir: results
+  save_config: true
+  save_metrics: true
+  save_plots: true

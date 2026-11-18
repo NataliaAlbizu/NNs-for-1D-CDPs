@@ -1,0 +1,27 @@
+seed: 10
+dtype: float64
+
+epsilon: 0.1
+
+# Boundary condition method: soft, H, or I
+BC_appr: soft
+
+# Parameters for the indicator function I
+alpha: null
+beta: null
+
+n: 256  # for equidistant grid from which to sample collocation points
+N_c: 40  # collocaction points
+n_ref: 20000  # for evaluation
+
+layers: [1, 50, 50, 50, 50, 1]
+
+lr: 0.001   # lr for Adam
+adam_epochs: 400
+lbfgs_epochs: 400
+
+output:
+  results_dir: results
+  save_config: true
+  save_metrics: true
+  save_plots: true
