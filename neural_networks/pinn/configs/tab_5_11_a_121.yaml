@@ -1,0 +1,24 @@
+seed: 10
+dtype: float64
+epsilon: 0.001
+BC_appr: I
+alpha: -1.1
+beta: 3.0
+n: 256
+N_c: 119
+n_ref: 20000
+layers:
+- 1
+- 50
+- 50
+- 50
+- 50
+- 1
+lr: 0.001
+adam_epochs: 400
+lbfgs_epochs: 400
+output:
+  results_dir: results
+  save_config: true
+  save_metrics: true
+  save_plots: true
