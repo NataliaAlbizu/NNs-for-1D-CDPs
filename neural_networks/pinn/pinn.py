@@ -16,8 +16,6 @@ sys.path.insert(0, str(PROJECT_ROOT))
 
 from utils.auxil import analytical, rel_l2_error, plot_and_save, plot_cost2, L2_H1_errors, first_der
 
-CONFIG_PATH = SCRIPT_DIR / "config.yaml"
-
 
 parser = argparse.ArgumentParser(description="Run PINN")
 
@@ -38,7 +36,12 @@ parser.add_argument("--n_ref", type=int, default=None)
 
 args = parser.parse_args()
 
-with open(CONFIG_PATH, "r") as f:
+config_path = Path(args.config)
+
+if not config_path.is_absolute():
+    config_path = SCRIPT_DIR / config_path
+
+with open(config_path, "r") as f:
     config = yaml.safe_load(f)
 
 # Apply only explicitly supplied command-line overrides
